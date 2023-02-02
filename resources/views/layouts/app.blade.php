@@ -10,7 +10,7 @@
 
     <!-- Fontawesome Link -->
     <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
-    <title>@yield('title')</title>
+    <title>@yield('title') - Book</title>
 </head>
 <body>
     @yield('content')
