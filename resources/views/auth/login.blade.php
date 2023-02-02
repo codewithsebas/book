@@ -6,7 +6,8 @@
     <div class="2xl:w-3/5 w-4/5 h-full flex items-center justify-center">
        <div class="w-full max-w-md 2xl:max-w-xl flex flex-col gap-5 p-4">
         <h1 class="text-black/70 text-3xl font-bold uppercase">Welcome to Login</h1>
-        <form action="#" class="flex flex-col gap-5">
+        <form method="POST" class="flex flex-col gap-5">
+            @csrf
             <div class="flex flex-col gap-1">
                 <label for="email">Email</label>
                 <input type="email" placeholder="Your email" id="email" name="email" class="w-full py-2 px-3 outline-none border rounded-md duration-200 hover:border-blue-300">
@@ -22,6 +23,9 @@
                 </div>
                 <a class="font-bold" href="{{ route('register.index')}}">Register</a>
             </div>
+            @error('message')
+                <p class="bg-red-300 py-2 px-3 border rounded-md text-center">{{ $message }}</p>
+            @enderror
             <button type="submit" class="bg-black text-white w-full py-2 px-3 outline-none border rounded-md">Login</button>
         </form>
        </div>

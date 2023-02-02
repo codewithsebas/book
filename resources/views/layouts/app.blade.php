@@ -13,6 +13,16 @@
     <title>@yield('title') - Book</title>
 </head>
 <body>
+    @if (auth()->check())
+    <header class="flex justify-between p-5 w-full">
+        <h1 class="text-4xl font-bold">Books</h1>
+        <ul class="flex gap-5">
+            <li><a  class="bg-black text-white py-2 px-4 rounded-md" href="{{ route('login.destroy') }}">Logout</a></li>
+            <li><a  class="bg-black text-white py-2 px-4 rounded-md" href="{{ route('register.index') }}">Reservation</a></li>
+        </ul>
+    </header>
+    @else 
+    @endif
     @yield('content')
 </body>
 </html>
